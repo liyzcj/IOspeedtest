@@ -35,7 +35,7 @@ Test C++ iostream speed,  and the impaction of sync_with_stdio()  and cin.tie()
 | cin~tie      | 使用cin, 并关闭 cin.tie(); 解除绑定        |
 | cin\~tie\~sync | 等价于 cin\~sync + cin\~tie                  |
 
-💡 注意: 不可在一次评测中评测 cin~sync cin~tie cin\~tie\~sync cin. 
+💡 注意: 不可在一次评测中评测 cin\~sync cin\~tie cin\~tie\~sync cin. 
 因为 tie(NULL); sync_with_stdio(false); 执行后会一直有效
 
 使用方法:
