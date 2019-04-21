@@ -2,7 +2,7 @@
 
 Test C++ iostream speed,  and the impaction of sync_with_stdio()  and cin.tie()
 
-
+[BLog](https://liyzcj.github.io/c++/2015/09/12/c++-test_cin_speed/)
 
 ## 摘要
 
@@ -22,16 +22,18 @@ Test C++ iostream speed,  and the impaction of sync_with_stdio()  and cin.tie()
 
 所有方法如下十种:
 
-- "cin"         : freopen()到stdin, 再用cin读取读取;
-- "scanf"       : freopen()到stdin, 再用scanf读取;
-- "ifstream"    : 直接使用ifstream读取文件;
-- "cin~sync"    : 使用cin,并关闭 sync_with_stdio(); 关闭同步
-- "cin~tie"     : 使用cin, 并关闭 cin.tie(); 解除绑定
-- "cin~tie~sync": 等价于 cin~sync + cin~tie
-- "fread"       : 使用fread() 读取整个字符串再处理
-- "read"        : 使用read() 读取整个字符串再处理
-- "mmap"        : 使用mmap()映射进内存再处理
-- "pascal"      : 使用pascal读取
+| 代号         | 描述                                       |
+|--------------|--------------------------------------------|
+| cin          | freopen()到stdin, 再用cin读取读取;         |
+| scanf        | freopen()到stdin, 再用scanf读取;           |
+| fread        | 使用fread() 读取整个字符串再处理           |
+| read         | 使用read() 读取整个字符串再处理            |
+| mmap         | 使用mmap()映射进内存再处理                 |
+| pascal       | 使用pascal读取                             |
+| ifstream     | 直接使用ifstream读取文件;                  |
+| cin~sync     | 使用cin,并关闭 sync_with_stdio(); 关闭同步 |
+| cin~tie      | 使用cin, 并关闭 cin.tie(); 解除绑定        |
+| cin~tie~sync | 等价于 cin~sync + cin~tie                  |
 
 💡 注意: 不可在一次评测中评测 cin~sync cin~tie cin~tie~sync cin. 
 因为 tie(NULL); sync_with_stdio(false); 执行后会一直有效
